@@ -23,7 +23,7 @@
       </div>
 
       <div v-else id="capture-area">
-        <h1>厚陸揚社區——機車格位表</h1>
+        <h1>厚陞揚 社區——機車格位表</h1>
 
         <div class="table-responsive">
           <table class="table table-bordered parking-table">
@@ -47,6 +47,7 @@
               </tr>
             </thead>
             <tbody>
+       
               <tr v-for="(row, rowIndex) in parkingData" :key="row.id">
                 <template v-for="(unit, idx) in row.units" :key="idx">
                   <td
@@ -119,20 +120,26 @@
           </div>
           <div class="scroll-list">
             <template v-if="step === 1">
-              <label
-                v-for="unit in allUnits.slice().sort((a, b) => {
+            <template  v-for="unit in allUnits.slice().sort((a, b) => {
                   const [aPrefix, aNum] = a.split('-');
                   const [bPrefix, bNum] = b.split('-');
 
                   if (aPrefix !== bPrefix) return aPrefix.localeCompare(bPrefix);
                   return parseInt(aNum) - parseInt(bNum);
                 })"
-                :key="unit"
+                  
+                :key="unit">
+              <label
+             v-if="unit !== ''"
+               
                 class="d-block"
               >
+
                 <input type="checkbox" v-model="disputeUnits" :value="unit" />
                 {{ unit }}
+              
               </label>
+            </template>
             </template>
             <template v-else-if="step === 3">
               <template v-for="unit in allUnits.slice().sort((a, b) => {
@@ -142,27 +149,29 @@
                   if (aPrefix !== bPrefix) return aPrefix.localeCompare(bPrefix);
                   return parseInt(aNum) - parseInt(bNum);
                 })" :key="unit">
-                <label v-if="disputeUnits.includes(unit)" class="d-block">
-                  <input type="checkbox" v-model="selectedUnits" :value="unit" disabled />
+                <label v-if="disputeUnits.includes(unit)" class="d-block" >
+                  <input  type="checkbox" v-model="selectedUnits" :value="unit" disabled :disabled="isYellow(unit)" />
                   {{ unit }}
                 </label>
-                <label v-else class="d-block">
-                  <input type="checkbox" v-model="firstPickUnits" :value="unit" />
+                <label v-else-if="unit !== ''" class="d-block" >
+                  <input  type="checkbox" v-model="firstPickUnits" :value="unit" :disabled="isYellow(unit)" />
                   {{ unit }}
                 </label>
               </template>
             </template>
             <template v-else>
-              <label v-for="unit in allUnits.slice().sort((a, b) => {
+            <template v-for="unit in allUnits.slice().sort((a, b) => {
                   const [aPrefix, aNum] = a.split('-');
                   const [bPrefix, bNum] = b.split('-');
 
                   if (aPrefix !== bPrefix) return aPrefix.localeCompare(bPrefix);
                   return parseInt(aNum) - parseInt(bNum);
-                })" :key="unit" class="d-block">
-                <input type="checkbox" v-model="selectedUnits" :value="unit" />
+                })" :key="unit">
+              <label  v-if="unit !== ''"  class="d-block">
+                <input  type="checkbox" v-model="selectedUnits" :value="unit" />
                 {{ unit }}
               </label>
+            </template>
             </template>
           </div>
         </div>
@@ -176,9 +185,11 @@
               {{ disputeSlots.length }} 個爭議車位(1,2,9,10,12,14,15,24,25,26,27)）
             </h6>
             <div class="scroll-list">
+            <template v-for="unit in disputeUnits"
+                :key="unit">
               <label
-                v-for="unit in disputeUnits"
-                :key="unit"
+              v-if="unit !== ''"
+                
                 class="d-flex justify-content-between align-items-center mb-1"
               >
                 <div>
@@ -189,6 +200,8 @@
                   車位：{{ getDisputeSlot(unit) || "-" }}
                 </div>
               </label>
+            </template>
+
             </div>
             <button class="btn btn-primary mt-3" @click="assignDisputeSlots">
               指派完成 → 下一步
@@ -222,7 +235,7 @@
           <div v-if="step === 3">
             <h6>抽第一車位</h6>
             <div class="scroll-list" style="max-height: 135px">
-              <label v-for="unit in firstPickUnits" :key="unit" class="d-block">
+              <label v-if="unit !== ''" v-for="unit in firstPickUnits" :key="unit" class="d-block">
                 {{ unit }}
                 <span v-if="disputeUnits.includes(unit)" class="text-muted"
                   >（爭議戶，無法抽第一車位）</span
@@ -289,20 +302,25 @@ const tableDate = ref(formattedDate);
 
 // 基本資料
 const parkingData = ref(
-  [...Array(13)].map((_, i) => ({
-    id: i + 1,
-    units: [
-      `A1-${String(i + 3).padStart(2, "0")}`,
-      `A2-${String(i + 3).padStart(2, "0")}`,
-      `A3-${String(i + 3).padStart(2, "0")}`,
-      `B1-${String(i + 1).padStart(2, "0")}`,
-      `B2-${String(i + 1).padStart(2, "0")}`,
-    ],
-    zones: ["a1", "a2", "a3", "b1", "b2"],
-    first: ["", "", "", "", ""],
-    second: ["", "", "", "", ""],
-    occupied: Array(5).fill({ first: false, second: false }),
-  }))
+  [...Array(13)].map((_, i) => {
+    // B1 號碼：第一格空白，之後 B1-02 到 B1-13
+    const b1Number = i === 0 ? "" : `B1-${String(i + 1).padStart(2, "0")}`;
+
+    return {
+      id: i + 1,
+      units: [
+        `A1-${String(i + 3).padStart(2, "0")}`,
+        `A2-${String(i + 3).padStart(2, "0")}`,
+        `A3-${String(i + 3).padStart(2, "0")}`,
+        b1Number, // ✅ 第一格空白，之後才是 B1-02 ~ B1-13
+        `B2-${String(i + 1).padStart(2, "0")}`,
+      ],
+      zones: ["a1", "a2", "a3", "b1", "b2"],
+      first: ["", "", "", "", ""],
+      second: ["", "", "", "", ""],
+      occupied: Array(5).fill({ first: false, second: false }),
+    };
+  })
 );
 
 // 切換全選 / 全不選
@@ -341,12 +359,24 @@ const toggleSelectAll = (value) => {
   }
 };
 
-// 全部住戶清單
-const allUnits = computed(() => parkingData.value.flatMap((row) => row.units));
+// 判斷是否是黃牌車戶
+const isYellow = (unit) => {
+  return yellowWinners.value.some((y) => y.unit === unit);
+};
 
+
+// 全部住戶清單（自動過濾空白）
+const allUnits = computed(() =>
+  parkingData.value.flatMap((row) => row.units).filter((u) => u && u.trim() !== "")
+);
 // 車位資料
 const allSlots = Array.from({ length: 82 }, (_, i) => i + 1).filter((i) => i !== 11);
-const disputeSlots = [1, 2, 9, 10, 12, 14, 24, 25, 26, 27];
+
+// 不抽籤的車格
+const excludedSlots = [30, 31, 32, 33];
+
+// 爭議格（會被爭議戶直接指派）
+const disputeSlots = [1, 2, 9, 10, 12, 14, 15, 24, 25, 26, 27];
 const yellowSlots = [53, 72, 82];
 
 // 畫面控制
@@ -388,6 +418,7 @@ const saveData = () => {
 
 // 格位處理
 const saveSlot = (unit, type, slot) => {
+  if (!unit || unit.trim() === "") return; // ⛔ 忽略空白戶
   for (const row of parkingData.value) {
     const idx = row.units.indexOf(unit);
     if (idx !== -1) {
@@ -446,16 +477,26 @@ function clearResults() {
   results.value = []; // ✅ 清空陣列
 }
 let test01 = ref(false);
-// 步驟3抽第一車位（排除爭議戶）
+// 步驟3抽第一車位（排除爭議戶與黃牌車主）
 const drawFirstSlotsAnimated = async () => {
   results.value = [];
+
+  const yellowUnits = yellowWinners.value.map((y) => y.unit); // ⛔ 黃牌戶
+
   const available = allSlots.filter(
-    (s) => !disputeSlots.includes(s) && !yellowSlots.includes(s)
+    (s) =>
+      !disputeSlots.includes(s) &&
+      !yellowSlots.includes(s) &&
+      !excludedSlots.includes(s)
   );
-  const normalUnits = selectedUnits.value.filter((u) => !disputeUnits.value.includes(u)); // 只抽非爭議戶
+   // 抽的對象：非爭議戶 + 非黃牌戶
+  const normalUnits = selectedUnits.value.filter(
+    (u) => !disputeUnits.value.includes(u) && !yellowUnits.includes(u)
+  );
+
   const picked = randomPick(available, normalUnits.length);
 
-  for (let i = 0; i < normalUnits.length; i++) {
+for (let i = 0; i < normalUnits.length; i++) {
     await new Promise((r) => setTimeout(r, 400));
     saveSlot(normalUnits[i], "first", picked[i]);
     results.value.push({ unit: normalUnits[i], slot: picked[i] });
@@ -471,8 +512,10 @@ const drawSecondSlotsAnimated = async () => {
 
   // 找出剩餘可用的 slot
   let remaining = allSlots.filter(
-    (s) => !parkingData.value.some((row) => [...row.first, ...row.second].includes(s))
-  );
+  (s) =>
+    !excludedSlots.includes(s) && // ✅ 排除不抽格
+    !parkingData.value.some((row) => [...row.first, ...row.second].includes(s))
+);
 
   const picked = [];
   let x = 1;
