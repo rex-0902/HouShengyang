@@ -1,0 +1,1095 @@
+{
+  "parkingGrid": [
+    {
+      "id": "1",
+      "ParkingNumber": 1,
+      "parkingFloor": ""
+    },
+    {
+      "id": "2",
+      "ParkingNumber": 2,
+      "parkingFloor": ""
+    },
+    {
+      "id": "3",
+      "ParkingNumber": 3,
+      "parkingFloor": ""
+    },
+    {
+      "id": "4",
+      "ParkingNumber": 4,
+      "parkingFloor": ""
+    },
+    {
+      "id": "5",
+      "ParkingNumber": 5,
+      "parkingFloor": ""
+    },
+    {
+      "id": "6",
+      "ParkingNumber": 6,
+      "parkingFloor": ""
+    },
+    {
+      "id": "7",
+      "ParkingNumber": 7,
+      "parkingFloor": ""
+    },
+    {
+      "id": "8",
+      "ParkingNumber": 8,
+      "parkingFloor": ""
+    },
+    {
+      "id": "9",
+      "ParkingNumber": 9,
+      "parkingFloor": ""
+    },
+    {
+      "id": "10",
+      "ParkingNumber": 10,
+      "parkingFloor": ""
+    },
+    {
+      "id": "11",
+      "ParkingNumber": 12,
+      "parkingFloor": ""
+    },
+    {
+      "id": "12",
+      "ParkingNumber": 13,
+      "parkingFloor": ""
+    },
+    {
+      "id": "13",
+      "ParkingNumber": 14,
+      "parkingFloor": ""
+    },
+    {
+      "id": "14",
+      "ParkingNumber": 15,
+      "parkingFloor": ""
+    },
+    {
+      "id": "15",
+      "ParkingNumber": 16,
+      "parkingFloor": ""
+    },
+    {
+      "id": "16",
+      "ParkingNumber": 17,
+      "parkingFloor": ""
+    },
+    {
+      "id": "17",
+      "ParkingNumber": 18,
+      "parkingFloor": ""
+    },
+    {
+      "id": "18",
+      "ParkingNumber": 19,
+      "parkingFloor": ""
+    },
+    {
+      "id": "19",
+      "ParkingNumber": 20,
+      "parkingFloor": ""
+    },
+    {
+      "id": "20",
+      "ParkingNumber": 21,
+      "parkingFloor": ""
+    },
+    {
+      "id": "21",
+      "ParkingNumber": 22,
+      "parkingFloor": ""
+    },
+    {
+      "id": "22",
+      "ParkingNumber": 23,
+      "parkingFloor": ""
+    },
+    {
+      "id": "23",
+      "ParkingNumber": 24,
+      "parkingFloor": ""
+    },
+    {
+      "id": "24",
+      "ParkingNumber": 25,
+      "parkingFloor": ""
+    },
+    {
+      "id": "25",
+      "ParkingNumber": 26,
+      "parkingFloor": ""
+    },
+    {
+      "id": "26",
+      "ParkingNumber": 27,
+      "parkingFloor": ""
+    },
+    {
+      "id": "27",
+      "ParkingNumber": 28,
+      "parkingFloor": ""
+    },
+    {
+      "id": "28",
+      "ParkingNumber": 29,
+      "parkingFloor": ""
+    },
+    {
+      "id": "29",
+      "ParkingNumber": 30,
+      "parkingFloor": ""
+    },
+    {
+      "id": "30",
+      "ParkingNumber": 31,
+      "parkingFloor": ""
+    },
+    {
+      "id": "31",
+      "ParkingNumber": 32,
+      "parkingFloor": ""
+    },
+    {
+      "id": "32",
+      "ParkingNumber": 33,
+      "parkingFloor": ""
+    },
+    {
+      "id": "33",
+      "ParkingNumber": 34,
+      "parkingFloor": ""
+    },
+    {
+      "id": "34",
+      "ParkingNumber": 35,
+      "parkingFloor": ""
+    },
+    {
+      "id": "35",
+      "ParkingNumber": 36,
+      "parkingFloor": ""
+    },
+    {
+      "id": "36",
+      "ParkingNumber": 37,
+      "parkingFloor": ""
+    },
+    {
+      "id": "37",
+      "ParkingNumber": 38,
+      "parkingFloor": ""
+    },
+    {
+      "id": "38",
+      "ParkingNumber": 39,
+      "parkingFloor": ""
+    },
+    {
+      "id": "39",
+      "ParkingNumber": 40,
+      "parkingFloor": ""
+    },
+    {
+      "id": "40",
+      "ParkingNumber": 41,
+      "parkingFloor": ""
+    },
+    {
+      "id": "41",
+      "ParkingNumber": 42,
+      "parkingFloor": ""
+    },
+    {
+      "id": "42",
+      "ParkingNumber": 43,
+      "parkingFloor": ""
+    },
+    {
+      "id": "43",
+      "ParkingNumber": 44,
+      "parkingFloor": ""
+    },
+    {
+      "id": "44",
+      "ParkingNumber": 45,
+      "parkingFloor": ""
+    },
+    {
+      "id": "45",
+      "ParkingNumber": 46,
+      "parkingFloor": ""
+    },
+    {
+      "id": "46",
+      "ParkingNumber": 47,
+      "parkingFloor": ""
+    },
+    {
+      "id": "47",
+      "ParkingNumber": 48,
+      "parkingFloor": ""
+    },
+    {
+      "id": "48",
+      "ParkingNumber": 49,
+      "parkingFloor": ""
+    },
+    {
+      "id": "49",
+      "ParkingNumber": 50,
+      "parkingFloor": ""
+    },
+    {
+      "id": "50",
+      "ParkingNumber": 51,
+      "parkingFloor": ""
+    },
+    {
+      "id": "51",
+      "ParkingNumber": 52,
+      "parkingFloor": ""
+    },
+    {
+      "id": "52",
+      "ParkingNumber": 53,
+      "parkingFloor": ""
+    },
+    {
+      "id": "53",
+      "ParkingNumber": 54,
+      "parkingFloor": ""
+    },
+    {
+      "id": "54",
+      "ParkingNumber": 55,
+      "parkingFloor": ""
+    },
+    {
+      "id": "55",
+      "ParkingNumber": 56,
+      "parkingFloor": ""
+    },
+    {
+      "id": "56",
+      "ParkingNumber": 57,
+      "parkingFloor": ""
+    },
+    {
+      "id": "57",
+      "ParkingNumber": 58,
+      "parkingFloor": ""
+    },
+    {
+      "id": "58",
+      "ParkingNumber": 59,
+      "parkingFloor": ""
+    },
+    {
+      "id": "59",
+      "ParkingNumber": 60,
+      "parkingFloor": ""
+    },
+    {
+      "id": "60",
+      "ParkingNumber": 61,
+      "parkingFloor": ""
+    },
+    {
+      "id": "61",
+      "ParkingNumber": 62,
+      "parkingFloor": ""
+    },
+    {
+      "id": "62",
+      "ParkingNumber": 63,
+      "parkingFloor": ""
+    },
+    {
+      "id": "63",
+      "ParkingNumber": 64,
+      "parkingFloor": ""
+    },
+    {
+      "id": "64",
+      "ParkingNumber": 65,
+      "parkingFloor": ""
+    },
+    {
+      "id": "65",
+      "ParkingNumber": 66,
+      "parkingFloor": ""
+    },
+    {
+      "id": "66",
+      "ParkingNumber": 67,
+      "parkingFloor": ""
+    },
+    {
+      "id": "67",
+      "ParkingNumber": 68,
+      "parkingFloor": ""
+    },
+    {
+      "id": "68",
+      "ParkingNumber": 69,
+      "parkingFloor": ""
+    },
+    {
+      "id": "69",
+      "ParkingNumber": 70,
+      "parkingFloor": ""
+    },
+    {
+      "id": "70",
+      "ParkingNumber": 71,
+      "parkingFloor": ""
+    },
+    {
+      "id": "71",
+      "ParkingNumber": 72,
+      "parkingFloor": ""
+    },
+    {
+      "id": "72",
+      "ParkingNumber": 73,
+      "parkingFloor": ""
+    },
+    {
+      "id": "73",
+      "ParkingNumber": 74,
+      "parkingFloor": ""
+    },
+    {
+      "id": "74",
+      "ParkingNumber": 75,
+      "parkingFloor": ""
+    },
+    {
+      "id": "75",
+      "ParkingNumber": 76,
+      "parkingFloor": ""
+    },
+    {
+      "id": "76",
+      "ParkingNumber": 77,
+      "parkingFloor": ""
+    },
+    {
+      "id": "77",
+      "ParkingNumber": 78,
+      "parkingFloor": ""
+    },
+    {
+      "id": "78",
+      "ParkingNumber": 79,
+      "parkingFloor": ""
+    },
+    {
+      "id": "79",
+      "ParkingNumber": 80,
+      "parkingFloor": "A1-03"
+    },
+    {
+      "id": "80",
+      "ParkingNumber": 81,
+      "parkingFloor": ""
+    }
+  ],
+  "parkingData": [
+    {
+      "id": "1",
+      "units": [
+        "A1-03",
+        "A2-03",
+        "A3-03",
+        "B1-01",
+        "B2-01"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "80",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "units": [
+        "A1-04",
+        "A2-04",
+        "A3-04",
+        "B1-02",
+        "B2-02"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "units": [
+        "A1-05",
+        "A2-05",
+        "A3-05",
+        "B1-03",
+        "B2-03"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "units": [
+        "A1-06",
+        "A2-06",
+        "A3-06",
+        "B1-04",
+        "B2-04"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "units": [
+        "A1-07",
+        "A2-07",
+        "A3-07",
+        "B1-05",
+        "B2-05"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "units": [
+        "A1-08",
+        "A2-08",
+        "A3-08",
+        "B1-06",
+        "B2-06"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "units": [
+        "A1-09",
+        "A2-09",
+        "A3-09",
+        "B1-07",
+        "B2-07"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "units": [
+        "A1-10",
+        "A2-10",
+        "A3-10",
+        "B1-08",
+        "B2-08"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "units": [
+        "A1-11",
+        "A2-11",
+        "A3-11",
+        "B1-09",
+        "B2-09"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "units": [
+        "A1-12",
+        "A2-12",
+        "A3-12",
+        "B1-10",
+        "B2-10"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "units": [
+        "A1-13",
+        "A2-13",
+        "A3-13",
+        "B1-11",
+        "B2-11"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "units": [
+        "A1-14",
+        "A2-14",
+        "A3-14",
+        "B1-12",
+        "B2-12"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "units": [
+        "A1-15",
+        "A2-15",
+        "A3-15",
+        "B1-13",
+        "B2-13"
+      ],
+      "zones": [
+        "a1",
+        "a2",
+        "a3",
+        "b1",
+        "b2"
+      ],
+      "first": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "second": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "occupied": [
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        },
+        {
+          "first": false,
+          "second": false
+        }
+      ]
+    }
+  ]
+}

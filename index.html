@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>厚陞揚社區</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/html2canvas.min.js"></script>
+    <script type="module" src="/src/xlsx.full.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/bootstrap.min.js"></script>
+
+
+  </body>
+   <script>
+        // Tab 切換功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link[data-tab]');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            const navbarCollapse = document.getElementById('navbarNav');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // 移除所有 active class
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    // 添加 active class 到選中的項目
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                    
+                    // 在手機版關閉選單
+                    if (window.innerWidth < 992) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, {toggle: false});
+                        bsCollapse.hide();
+                    }
+                    
+                    // 滾動到頂部
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                });
+            });
+            
+            // 表單提交處理
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('感謝您的訊息！我們會盡快回覆您。');
+                    this.reset();
+                });
+            }
+        });
+    </script>
+</html>
