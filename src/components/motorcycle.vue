@@ -580,21 +580,32 @@ const downloadJPG = async () => {
 const downloadExcel = () => {
   const wb = XLSX.utils.book_new();
 
-  // 轉成 worksheet
-  const dataForExcel = parkingData.value.flatMap((row) => {
-    return row.units.map((unit, idx) => ({
-      戶別: unit,
-      第一車位: row.first[idx],
-      第二車位: row.second[idx],
-    }));
+  // 先建立表頭
+  const header = [
+    "戶別", "第一車位", "第二車位",
+    "戶別", "第一車位", "第二車位",
+    "戶別", "第一車位", "第二車位",
+    "戶別", "第一車位", "第二車位",
+    "戶別", "第一車位", "第二車位",
+  ];
+
+  // 轉換成表格格式（每列顯示 5 組戶別資料）
+  const body = parkingData.value.map((row) => {
+    const rowData = [];
+    row.units.forEach((unit, idx) => {
+      rowData.push(unit);
+      rowData.push(row.first[idx] || "");
+      rowData.push(row.second[idx] || "");
+    });
+    return rowData;
   });
 
-  const ws = XLSX.utils.json_to_sheet(dataForExcel);
+  const ws = XLSX.utils.aoa_to_sheet([header, ...body]);
   XLSX.utils.book_append_sheet(wb, ws, "機車格位表");
 
-  // 下載
   XLSX.writeFile(wb, `parking-${tableDate.value}.xlsx`);
 };
+
 
 
 
@@ -860,4 +871,51 @@ h1 {
   font-size: 14px;
   color: #666;
 }
+/* ✅ 統一 checkbox 外觀為白色邊框、黑色勾選 */
+input[type="checkbox"] {
+  accent-color: #fff; /* 主要屬性：強制白色主題 */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 16px;
+  height: 16px;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: #0d6efd; /* 勾選後藍色 */
+}
+
+/* ✅ 讓 checkbox 的背景永遠是白的（防止 dark mode 強制變黑） */
+@media (prefers-color-scheme: dark) {
+  input[type="checkbox"] {
+    background-color: #fff !important;
+    accent-color: #0d6efd !important;
+  }
+}
+
+/* ✅ 白色滾動條樣式（針對 WebKit 瀏覽器，如 Chrome / Edge） */
+.scroll-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scroll-list::-webkit-scrollbar-track {
+  background: #f5f5f5; /* 滾動條背景 */
+  border-radius: 10px;
+}
+
+.scroll-list::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* 滾動條滑塊 */
+  border-radius: 10px;
+  border: 2px solid #f5f5f5;
+}
+
+.scroll-list::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+
+/* ✅ FireFox 專用滾動條樣式 */
+.scroll-list {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f5f5f5;
+}
+
 </style>
