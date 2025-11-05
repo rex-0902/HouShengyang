@@ -521,14 +521,13 @@ const drawSecondSlotsAnimated = async () => {
       !parkingData.value.some((row) => [...row.first, ...row.second].includes(s))
   );
 
-  // 先隨機洗牌 remaining
+  // 打亂剩餘的車位
   const shuffledRemaining = [...remaining].sort(() => Math.random() - 0.5);
 
-  // 要抽出的數量
   const totalToPick = selectedUnits.value.length;
-
-  // 如果剩餘車位不足，就用備取補上
   const picked = [];
+
+  // 如果剩餘車位不足，用備取補上
   for (let i = 0; i < totalToPick; i++) {
     if (i < shuffledRemaining.length) {
       picked.push(shuffledRemaining[i]);
@@ -537,12 +536,15 @@ const drawSecondSlotsAnimated = async () => {
     }
   }
 
-  // 依照 selectedUnits 的順序，依次指派抽中的格位
+  // ✅ 再次隨機洗牌整份結果（包含備取）
+  const finalPicked = [...picked].sort(() => Math.random() - 0.5);
+
+  // 依序配給 selectedUnits
   for (let i = 0; i < selectedUnits.value.length; i++) {
     await new Promise((r) => setTimeout(r, 400));
 
     const unit = selectedUnits.value[i];
-    const slot = picked[i];
+    const slot = finalPicked[i];
 
     saveSlot(unit, "second", slot);
     results.value.push({ unit, slot });
@@ -550,7 +552,8 @@ const drawSecondSlotsAnimated = async () => {
 
   alert("🎉 所有抽籤完成！");
   closeModal();
-};;
+};
+
 
 // 清除所有
 const clearAllSlots = () => {
