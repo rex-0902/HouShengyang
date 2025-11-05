@@ -536,8 +536,8 @@ const drawSecondSlotsAnimated = async () => {
     }
   }
 
-  // ✅ 再次隨機洗牌整份結果（包含備取）
-  const finalPicked = [...picked].sort(() => Math.random() - 0.5);
+  // // ✅ 再次隨機洗牌整份結果（包含備取）
+  // const finalPicked = [...picked].sort(() => Math.random() - 0.5);
 
   // 依序配給 selectedUnits
   for (let i = 0; i < selectedUnits.value.length; i++) {
