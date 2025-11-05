@@ -182,7 +182,7 @@
           <div v-if="step === 1">
             <h6>
               ⚠️ 選擇爭議車位（共
-              {{ disputeSlots.length }} 個爭議車位(1,2,9,10,12,14,15,24,25,26,27)）
+              {{ disputeSlots.length }} 個爭議車位(1,2,9,10,12,14,24,25,26,27)）
             </h6>
             <div class="scroll-list">
             <template v-for="unit in disputeUnits"
@@ -256,6 +256,7 @@
                 @click="
                   step = 4;
                   clearResults();
+                  selectedUnits = ['B1-07','A1-11','B1-05','B1-08','A1-03','B1-04','A3-05','A2-10','A3-04','B1-06','A3-08','A2-15','B2-03','A1-08','A2-14'];
                 "
               >
                 指派完成 → 下一步
@@ -373,10 +374,10 @@ const allUnits = computed(() =>
 const allSlots = Array.from({ length: 82 }, (_, i) => i + 1).filter((i) => i !== 11);
 
 // 不抽籤的車格
-const excludedSlots = [30, 31, 32, 33];
+const excludedSlots = [30, 31, 32, 33, 15];
 
 // 爭議格（會被爭議戶直接指派）
-const disputeSlots = [1, 2, 9, 10, 12, 14, 15, 24, 25, 26, 27];
+const disputeSlots = [1, 2, 9, 10, 12, 14, 24, 25, 26, 27];
 const yellowSlots = [53, 72, 82];
 
 // 畫面控制
@@ -389,6 +390,8 @@ const results = ref([]);
 
 // 打開彈窗
 const openModal = () => {
+  selectedUnits.value = ['A1-13'];
+  disputeUnits.value = ['A1-07','B2-11','B1-06','B1-05','A2-07','A2-09','B2-10','B1-12','A1-03','B2-03'];
   showModal.value = true;
   step.value = 1;
   results.value = [];
@@ -502,6 +505,7 @@ for (let i = 0; i < normalUnits.length; i++) {
     results.value.push({ unit: normalUnits[i], slot: picked[i] });
   }
   test01.value = true
+  console.log(results)
   alert("第一車位抽籤結束！");
   // step.value = 4;
 };
@@ -510,36 +514,43 @@ for (let i = 0; i < normalUnits.length; i++) {
 const drawSecondSlotsAnimated = async () => {
   results.value = [];
 
-  // 找出剩餘可用的 slot
+  // 取得剩餘可用的車位
   let remaining = allSlots.filter(
-  (s) =>
-    !excludedSlots.includes(s) && // ✅ 排除不抽格
-    !parkingData.value.some((row) => [...row.first, ...row.second].includes(s))
-);
+    (s) =>
+      !excludedSlots.includes(s) && // 排除不抽格
+      !parkingData.value.some((row) => [...row.first, ...row.second].includes(s))
+  );
 
+  // 先隨機洗牌 remaining
+  const shuffledRemaining = [...remaining].sort(() => Math.random() - 0.5);
+
+  // 要抽出的數量
+  const totalToPick = selectedUnits.value.length;
+
+  // 如果剩餘車位不足，就用備取補上
   const picked = [];
-  let x = 1;
+  for (let i = 0; i < totalToPick; i++) {
+    if (i < shuffledRemaining.length) {
+      picked.push(shuffledRemaining[i]);
+    } else {
+      picked.push(`備取${i - shuffledRemaining.length + 1}`);
+    }
+  }
+
+  // 依照 selectedUnits 的順序，依次指派抽中的格位
   for (let i = 0; i < selectedUnits.value.length; i++) {
     await new Promise((r) => setTimeout(r, 400));
 
-    let slot;
-    if (remaining.length > 0) {
-      // 從剩餘 slot 隨機挑一個
-      const idx = Math.floor(Math.random() * remaining.length);
-      slot = remaining[idx];
-      remaining.splice(idx, 1); // 移除已抽的
-    } else {
-      // 如果 slot 抽完，用備取
-      slot = `備取${x++}`;
-    }
+    const unit = selectedUnits.value[i];
+    const slot = picked[i];
 
-    saveSlot(selectedUnits.value[i], "second", slot);
-    results.value.push({ unit: selectedUnits.value[i], slot });
+    saveSlot(unit, "second", slot);
+    results.value.push({ unit, slot });
   }
 
   alert("🎉 所有抽籤完成！");
   closeModal();
-};
+};;
 
 // 清除所有
 const clearAllSlots = () => {
