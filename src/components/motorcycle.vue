@@ -256,7 +256,7 @@
                 @click="
                   step = 4;
                   clearResults();
-                  selectedUnits = ['B1-07','A1-11','B1-05','B1-08','A1-03','B1-04','A3-05','A2-10','A3-04','B1-06','A3-08','A2-15','B2-03','A1-08','A2-14'];
+                  selectedUnits = ['B1-07','A1-11','B1-05','B1-08','A1-03','B1-04','A3-05','A2-10','A3-04','B1-06','A3-08','A2-15','B2-03','A1-08','A2-14','A2-05','B1-13'];
                 "
               >
                 指派完成 → 下一步
@@ -390,7 +390,7 @@ const results = ref([]);
 
 // 打開彈窗
 const openModal = () => {
-  selectedUnits.value = ['A1-13'];
+  selectedUnits.value = ['A1-13','B1-13'];
   disputeUnits.value = ['A1-07','B2-11','B1-06','B1-05','A2-07','A2-09','B2-10','B1-12','A1-03','B2-03'];
   showModal.value = true;
   step.value = 1;
