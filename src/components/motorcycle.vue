@@ -3,7 +3,7 @@
     <div class="table-container">
       <div class="action-buttons">
         <button @click="openModal" class="btn btn-warning">抽車位</button>
-        <button @click="saveData" class="btn btn-primary">儲存</button>
+        <!-- <button @click="saveData" class="btn btn-primary">儲存</button> -->
         <button @click="clearAllSlots" class="btn btn-danger">清除所有車位</button>
         <button @click="downloadJPG" class="btn btn-success">下載 JPG</button>
         <button @click="downloadExcel" class="btn btn-info">下載 Excel</button>
@@ -23,7 +23,7 @@
       </div>
 
       <div v-else id="capture-area">
-        <h1>厚陞揚 社區——機車格位表</h1>
+        <h1>厚陞揚社區——機車格位表</h1>
 
         <div class="table-responsive">
           <table class="table table-bordered parking-table">
